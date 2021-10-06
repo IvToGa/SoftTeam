@@ -23,11 +23,11 @@ namespace Veterinaria.App.Persistencia{
         
         EntidadVeterinario IRepoVeterinario.EditarVeterinario(EntidadVeterinario veterinarioNuevo) {
 
-            var veterinarioEncontrado = this.appContext.Veterinarios.FirstOrDefault( p => p.Id == veterinarioNuevo.Id); 
+            var veterinarioEncontrado = this.appContext.Veterinarios.FirstOrDefault( p => p.IdVeterinario == veterinarioNuevo.IdVeterinario); 
             if(veterinarioEncontrado != null){
-                veterinarioEncontrado.Nombre = veterinarioNuevo.Nombre;
-                veterinarioEncontrado.Telefono = veterinarioNuevo.Telefono;
-                veterinarioEncontrado.Edad = veterinarioNuevo.Edad;
+                veterinarioEncontrado.Especializacion = veterinarioNuevo.Especializacion;
+                veterinarioEncontrado.TarjetaProfesional = veterinarioNuevo.TarjetaProfesional;
+                veterinarioEncontrado.Salario = veterinarioNuevo.Salario;
                 this.appContext.SaveChanges();  
                 return veterinarioEncontrado;              
             } else {
@@ -36,11 +36,11 @@ namespace Veterinaria.App.Persistencia{
         }
 
          EntidadVeterinario IRepoVeterinario.GetVeterinario(int idVeterinario) {
-            return this.appContext.Veterinarios.FirstOrDefault( p => p.Id == idVeterinario);           
+            return this.appContext.Veterinarios.FirstOrDefault( p => p.IdVeterinario == idVeterinario);           
         }
 
         void IRepoVeterinario.EliminarVeterinario(int idVeterinario) {
-           var veterinarioEncontrado = this.appContext.Veterinarios.FirstOrDefault( p => p.Id == idVeterinario); 
+           var veterinarioEncontrado = this.appContext.Veterinarios.FirstOrDefault( p => p.IdVeterinario == idVeterinario); 
 
             if(veterinarioEncontrado != null) {
                 this.appContext.Veterinarios.Remove(veterinarioEncontrado);

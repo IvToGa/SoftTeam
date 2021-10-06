@@ -25,9 +25,9 @@ namespace Veterinaria.App.Persistencia{
 
             var mascotaEncontrado = this.appContext.Mascotas.FirstOrDefault( p => p.IdMascota == mascotaNuevo.IdMascota); 
             if(mascotaEncontrado != null){
-                mascotaEncontrado.Nombre = mascotaNuevo.NombreMascota;
+                mascotaEncontrado.NombreMascota = mascotaNuevo.NombreMascota;
                 mascotaEncontrado.Raza = mascotaNuevo.Raza;
-                mascotaEncontrado.Edad = mascotaNuevo.EdadMascota;
+                mascotaEncontrado.EdadMascota = mascotaNuevo.EdadMascota;
                 mascotaEncontrado.FechaNacimiento = mascotaNuevo.FechaNacimiento;
                 this.appContext.SaveChanges();  
                 return mascotaEncontrado;              

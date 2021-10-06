@@ -24,7 +24,7 @@ namespace Veterinaria.App.Consola
             // EliminarHistoriaClinica(1);
             // BuscarHistoriaClinica(1);
 
-             AgregarMascota();
+            // AgregarMascota();
             // EditarMascota(1);
             // EliminarMascota(7);
             // BuscarMascota(1);
@@ -55,13 +55,6 @@ namespace Veterinaria.App.Consola
         private static void AgregarCuidador(){
 
             EntidadCuidador Cuidador = new EntidadCuidador {
-                Cedula = "987654321",
-                Nombre = "Juan Perez",
-                Telefono = "13243546",
-                Edad = 15,
-                Correo = "juan.perez@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 21),
                 CantidadMascotas = 3,
             };
 
@@ -72,14 +65,7 @@ namespace Veterinaria.App.Consola
 
             EntidadCuidador Cuidador = new EntidadCuidador {
                 IdCuidador = idCuidador,
-                Cedula = "987654321",
-                Nombre = "Juan Perez",
-                Telefono = "13243546",
-                Edad = 15,
-                Correo = "juan.perez@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 21),
-                CantidadMascotas = 3,
+                CantidadMascotas = 2,
             };
 
             repCuidador.EditarCuidador(Cuidador);
@@ -89,7 +75,7 @@ namespace Veterinaria.App.Consola
         private static void BuscarCuidador(int idCuidador) {
 
            var CuidadorEncontrado = repCuidador.GetCuidador(idCuidador);
-           Console.WriteLine("El nombre del Cuidador es: " + CuidadorEncontrado.Nombre);
+           Console.WriteLine("El nombre del Cuidador es: " + CuidadorEncontrado.IdCuidador);
         }
 
         private static void EliminarCuidador(int idCuidador) {
@@ -112,7 +98,7 @@ namespace Veterinaria.App.Consola
         private static void EditarHistoriaClinica(int idHistoriaClinica){
 
             EntidadHistoriaClinica HistoriaClinica = new EntidadHistoriaClinica {
-                Id = idHistoriaClinica,
+                IdHC = idHistoriaClinica,
                 Diagnostico = "En buen estado",
                 Tratamiento = "No necesario",
                 FechaRevision = new DateTime(2021, 09, 25),
@@ -125,7 +111,7 @@ namespace Veterinaria.App.Consola
         private static void BuscarHistoriaClinica(int idHistoriaClinica) {
 
            var HistoriaClinicaEncontrado = repHistoriaClinica.GetHistoriaClinica(idHistoriaClinica);
-           Console.WriteLine("El nombre del HistoriaClinica es: " + HistoriaClinicaEncontrado.Id);
+           Console.WriteLine("El nombre del HistoriaClinica es: " + HistoriaClinicaEncontrado.IdHC);
         }
 
         private static void EliminarHistoriaClinica(int idHistoriaClinica) {
@@ -137,13 +123,6 @@ namespace Veterinaria.App.Consola
         private static void AgregarGestor(){
 
             EntidadGestor Gestor = new EntidadGestor {
-                Cedula = "198273645",
-                Nombre = "Marcos",
-                Telefono = "86547",
-                Edad = 30,
-                Correo = "Marcos@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 20),
                 Cargo = "Gestor",
                 Salario = "10.000.000",
             };
@@ -154,14 +133,7 @@ namespace Veterinaria.App.Consola
         private static void EditarGestor(int idGestor){
 
             EntidadGestor Gestor = new EntidadGestor {
-                Id = idGestor,
-                Cedula = "198273645",
-                Nombre = "Marcos",
-                Telefono = "86547",
-                Edad = 30,
-                Correo = "Marcos@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 20),
+                IdGestor = idGestor,
                 Cargo = "Gestor",
                 Salario = "5.000.000",
             };
@@ -173,7 +145,7 @@ namespace Veterinaria.App.Consola
         private static void BuscarGestor(int idGestor) {
 
            var GestorEncontrado = repGestor.GetGestor(idGestor);
-           Console.WriteLine("El nombre del Gestor es: " + GestorEncontrado.Nombre);
+           Console.WriteLine("El nombre del Gestor es: " + GestorEncontrado.IdGestor);
         }
 
         private static void EliminarGestor(int idGestor) {
@@ -212,7 +184,7 @@ namespace Veterinaria.App.Consola
         private static void BuscarMascota(int idMascota) {
 
            var MascotaEncontrado = repMascota.GetMascota(idMascota);
-           Console.WriteLine("El nombre del Mascota es: " + MascotaEncontrado.Nombre);
+           Console.WriteLine("El nombre del Mascota es: " + MascotaEncontrado.NombreMascota);
         }
 
         private static void EliminarMascota(int idMascota) {
@@ -259,13 +231,6 @@ namespace Veterinaria.App.Consola
         private static void AgregarVeterinario(){
 
             EntidadVeterinario veterinario = new EntidadVeterinario {
-                Cedula = "987654321",
-                Nombre = "Juan Perez",
-                Telefono = "13243546",
-                Edad = 15,
-                Correo = "juan.perez@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 21),
                 Especializacion = "Veterinario",
                 TarjetaProfesional = "ing123"
             };
@@ -276,14 +241,7 @@ namespace Veterinaria.App.Consola
         private static void EditarVeterinario(int idVeterinario){
 
             EntidadVeterinario veterinario = new EntidadVeterinario {
-                Id = idVeterinario,
-                Cedula = "987654321",
-                Nombre = "Juan Perez",
-                Telefono = "13243546",
-                Edad = 15,
-                Correo = "juan.perez@correo.com",
-                Clave = "123qweasd",
-                FechaRegistro = new DateTime(2021, 09, 21),
+                IdVeterinario = idVeterinario,
                 Especializacion = "Veterinario Cirujano",
                 TarjetaProfesional = "ing123"
             };
@@ -295,7 +253,7 @@ namespace Veterinaria.App.Consola
         private static void BuscarVeterinario(int idVeterinario) {
 
            var veterinarioEncontrado = repVeterinario.GetVeterinario(idVeterinario);
-           Console.WriteLine("El nombre del veterinario es: " + veterinarioEncontrado.Nombre);
+           Console.WriteLine("El nombre del veterinario es: " + veterinarioEncontrado.IdVeterinario);
         }
 
         private static void EliminarVeterinario(int idVeterinario) {

@@ -23,7 +23,7 @@ namespace Veterinaria.App.Persistencia{
         
         EntidadVacunas IRepoVacunas.EditarVacuna(EntidadVacunas vacunaNuevo) {
 
-            var vacunaEncontrada = this.appContext.Vacunas.FirstOrDefault( p => p.Id == vacunaNuevo.Id); 
+            var vacunaEncontrada = this.appContext.Vacunas.FirstOrDefault( p => p.IdVacuna == vacunaNuevo.IdVacuna); 
             if(vacunaEncontrada != null){
                 vacunaEncontrada.Tipo = vacunaNuevo.Tipo;
                 vacunaEncontrada.Marca = vacunaNuevo.Marca;
@@ -36,11 +36,11 @@ namespace Veterinaria.App.Persistencia{
         }
 
          EntidadVacunas IRepoVacunas.GetVacuna(int idVacuna) {
-            return this.appContext.Vacunas.FirstOrDefault( p => p.Id == idVacuna);           
+            return this.appContext.Vacunas.FirstOrDefault( p => p.IdVacuna == idVacuna);           
         }
 
         void IRepoVacunas.EliminarVacunas(int idVacuna) {
-           var vacunaEncontrada = this.appContext.Vacunas.FirstOrDefault( p => p.Id == idVacuna); 
+           var vacunaEncontrada = this.appContext.Vacunas.FirstOrDefault( p => p.IdVacuna == idVacuna); 
 
             if(vacunaEncontrada != null) {
                 this.appContext.Vacunas.Remove(vacunaEncontrada);

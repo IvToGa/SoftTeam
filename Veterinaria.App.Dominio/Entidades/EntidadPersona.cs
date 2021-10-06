@@ -3,6 +3,7 @@ using System;
 namespace Veterinaria.App.Dominio
 {
     public class EntidadPersona {
+       public int Id {get; set;}
        public int IdPersona {get; set;}
        public String Cedula {get; set;}
        public String Nombre  {get; set;}

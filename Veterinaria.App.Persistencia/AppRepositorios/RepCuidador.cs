@@ -25,13 +25,7 @@ namespace Veterinaria.App.Persistencia{
 
             var CuidadorEncontrado = this.appContext.Cuidadores.FirstOrDefault( p => p.IdCuidador == CuidadorNuevo.IdCuidador); 
             if(CuidadorEncontrado != null){
-                CuidadorEncontrado.Cedula = CuidadorNuevo.Cedula;
-                CuidadorEncontrado.Nombre = CuidadorNuevo.Nombre;
-                CuidadorEncontrado.Telefono = CuidadorNuevo.Telefono;
-                CuidadorEncontrado.Edad = CuidadorNuevo.Edad;
-                CuidadorEncontrado.Correo = CuidadorNuevo.Correo;
-                CuidadorEncontrado.Clave = CuidadorNuevo.Clave;
-                CuidadorEncontrado.FechaRegistro = CuidadorNuevo.FechaRegistro;
+                CuidadorEncontrado.CantidadMascotas = CuidadorNuevo.CantidadMascotas;
                 this.appContext.SaveChanges();  
                 return CuidadorEncontrado;              
             } else {

@@ -23,7 +23,7 @@ namespace Veterinaria.App.Persistencia{
         
         EntidadGestor IRepoGestor.EditarGestor(EntidadGestor gestorNuevo) {
 
-            var gestorEncontrado = this.appContext.Gestor.FirstOrDefault( p => p.Id == gestorNuevo.Id); 
+            var gestorEncontrado = this.appContext.Gestor.FirstOrDefault( p => p.IdGestor == gestorNuevo.IdGestor); 
             if(gestorEncontrado != null){
                 gestorEncontrado.Cargo = gestorNuevo.Cargo;
                 gestorEncontrado.Salario = gestorNuevo.Salario;
@@ -35,11 +35,11 @@ namespace Veterinaria.App.Persistencia{
         }
 
          EntidadGestor IRepoGestor.GetGestor(int idGestor) {
-            return this.appContext.Gestor.FirstOrDefault( p => p.Id == idGestor);           
+            return this.appContext.Gestor.FirstOrDefault( p => p.IdGestor == idGestor);           
         }
 
         void IRepoGestor.EliminarGestor(int idGestor) {
-           var gestorEncontrado = this.appContext.Gestor.FirstOrDefault( p => p.Id == idGestor); 
+           var gestorEncontrado = this.appContext.Gestor.FirstOrDefault( p => p.IdGestor == idGestor); 
 
             if(gestorEncontrado != null) {
                 this.appContext.Gestor.Remove(gestorEncontrado);

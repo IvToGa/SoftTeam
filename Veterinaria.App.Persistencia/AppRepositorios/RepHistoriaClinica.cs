@@ -23,7 +23,7 @@ namespace Veterinaria.App.Persistencia{
         
         EntidadHistoriaClinica IRepoHistoriaClinica.EditarHistoriaClinica(EntidadHistoriaClinica historiaClinicaNuevo) {
 
-            var historiaClinicaEncontrado = this.appContext.HistoriasClinicas.FirstOrDefault( p => p.Id == historiaClinicaNuevo.Id); 
+            var historiaClinicaEncontrado = this.appContext.HistoriasClinicas.FirstOrDefault( p => p.IdHC == historiaClinicaNuevo.IdHC); 
             if(historiaClinicaEncontrado != null){
                 historiaClinicaEncontrado.Diagnostico = historiaClinicaNuevo.Diagnostico;
                 historiaClinicaEncontrado.Tratamiento = historiaClinicaNuevo.Tratamiento;
@@ -36,11 +36,11 @@ namespace Veterinaria.App.Persistencia{
         }
 
          EntidadHistoriaClinica IRepoHistoriaClinica.GetHistoriaClinica(int idHistoriaClinica) {
-            return this.appContext.HistoriasClinicas.FirstOrDefault( p => p.Id == idHistoriaClinica);           
+            return this.appContext.HistoriasClinicas.FirstOrDefault( p => p.IdHC == idHistoriaClinica);           
         }
 
         void IRepoHistoriaClinica.EliminarHistoriaClinica(int idHistoriaClinica) {
-           var historiaClinicaEncontrado = this.appContext.HistoriasClinicas.FirstOrDefault( p => p.Id == idHistoriaClinica); 
+           var historiaClinicaEncontrado = this.appContext.HistoriasClinicas.FirstOrDefault( p => p.IdHC == idHistoriaClinica); 
 
             if(historiaClinicaEncontrado != null) {
                 this.appContext.HistoriasClinicas.Remove(historiaClinicaEncontrado);

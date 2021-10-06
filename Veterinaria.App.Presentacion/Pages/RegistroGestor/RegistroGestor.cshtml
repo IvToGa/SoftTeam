@@ -1,0 +1,81 @@
+﻿@page
+@model Veterinaria.App.Pages.RegistroGestorModel
+@{
+}
+<div class="cls-container">
+    <div id="id-container-RegistroGestor">
+        <figure class="text-center">
+            <h1>Registro Gestor</h1><br>
+        </figure>
+        <form>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputCedula1" class="form-label">Nombre</label>
+                <div class="col-4">
+                    <input type="text" class="form-control" placeholder="Nombres" aria-label="First name">
+                </div>
+                <div class="col-4">
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Last name">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputCedula1" class="form-label">Cedula</label>
+                <div class="col-4">
+                    <input type="cedula" class="form-control" id="exampleInputCedula1">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputTelefono1" class="form-label">Telefono</label>
+                <div class="col-4">
+                    <input type="Telefono" class="form-control" id="exampleInputTelefono1">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputEdad1" class="form-label">Edad</label>
+                <div class="col-4">
+                    <input type="Edad" class="form-control" id="exampleInputEdad1">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleFormControlInput1" class="form-label">Correo</label>
+                <div class="col-4">
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Clave</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" id="inputPassword6" class="form-control"
+                        aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        Debe tener entre 8 y 20 caracteres.
+                    </span>
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputFechaRegistro1" class="form-label">Fecha de Registro</label>
+                <div class="col-4">
+                    <input type="FechaRegistro" class="form-control" placeholder="dd/mm/aaaa"
+                        id="exampleInputFechaRegistro1">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputCargo1" class="form-label">Cargo</label>
+                <div class="col-4">
+                    <input type="Cargo" class="form-control" id="exampleInputCargo1">
+                </div>
+            </div>
+            <div class="row mb-3 align-items-center">
+                <label for="exampleInputSalario1" class="form-label">Salario</label>
+                <div class="col-4">
+                    <input type="Salario" class="form-control" id="exampleInputSalario1">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
