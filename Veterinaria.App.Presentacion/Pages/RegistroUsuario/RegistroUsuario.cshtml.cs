@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Veterinaria.App.Pages
 {
-    public class RegistroGestorModel : PageModel
+    public class RegistroUsuarioModel : PageModel
     {
         public void OnGet()
         {
